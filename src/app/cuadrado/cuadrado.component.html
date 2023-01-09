@@ -1,1 +1,5 @@
-<p>cuadrado works!</p>
+<div class="cuadrado-juego roundend-lg border" (click)="cambiarJugador()" [ngClass]="{noClick:juegoService.ganador}">
+
+    <p class="text-yellow-400">{{cuadrado.state}}</p>
+
+</div>
