@@ -29,7 +29,7 @@ export class JuegoService {
   crearTablero() {
     let tablero = [];
     for (let i = 0; i < 9; i++) {
-      tablero.push({ id: 1, state: null });
+      tablero.push({ id: i, state: null });
     };
     return tablero;
   }
@@ -51,9 +51,9 @@ export class JuegoService {
 
   actualizaTablero(clickCuadrado: any) {
     this.tablero[clickCuadrado.id].state = clickCuadrado.state;
-    if (this.ganador) {
+    if (this.esGanador) {
       this.ganador = true;
-      this.elJuegoTerminado = false;
+      this.elJuegoActivo = false;
       this.elJuegoTerminado = true;
     }
   }
@@ -66,7 +66,7 @@ export class JuegoService {
     return this.comprobarDiagonal() || this.comprobarColumnas(this.tablero, "row") || this.comprobarColumnas(this.tablero, "col") ? true : false;
   }
 
-  comprobarColumnas(tablero: any, mode: any) {
+  comprobarColumnas(tablero: any, mode: any): boolean {
 
     const ROW = mode === "row" ? true : false;
     const DIST = ROW ? 1 : 3;
@@ -74,7 +74,7 @@ export class JuegoService {
     const NUMTIMES = ROW ? 7 : 3;
 
     for (let i = 0; i < NUMTIMES; i += INC) {
-      let primerCuadrado = tablero[i], state;
+      let primerCuadrado = tablero[i].state;
       let segundoCuadrado = tablero[i + DIST].state;
       let tercerCuadrado = tablero[i + (DIST * 2)].state;
 

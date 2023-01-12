@@ -7,6 +7,18 @@
 
         </h1>
 
+        <h1 class="text-center text-green-600 text-4xl mt-10 font-bold" *ngIf = "!juegoService.ganador">
+            Turno de {{juegoService.jugadorActivo}}
+        </h1>
+
+        <h1 class="text-center text-green-500 text-4xl mt-10 font-semibold" *ngIf = "juegoService.ganador" [ngClass]="{'text-teal-300' : juegoService.jugadorActivo == 'O'}">
+            ¡{{juegoService.jugadorActivo}} ha ganado!
+        </h1>
+        
+        <button class="bg-purple-400 hover:bg-yellow-400 text-dark font-bold py-2 px-4 rounded mx-auto block mt-5" *ngIf="juegoService.juegoAcabado" (click) = "reiniciarJuego()"> 
+            Reiniciar 
+        </button>
+
         <app-tablero></app-tablero>
 
     </div>
