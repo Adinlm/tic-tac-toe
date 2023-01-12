@@ -1,5 +1,5 @@
 <section class ="w-full">
-    <div class="cuadrado-container h-48">
-        <app-cuadrado></app-cuadrado>
+    <div class="cuadrado-container h-48" *ngFor="let cuadrado of juegoService.tablero">
+        <app-cuadrado [cuadrado]="cuadrado" border-blue></app-cuadrado>
     </div>
 </section>
