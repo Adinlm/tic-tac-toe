@@ -8,9 +8,9 @@ import { JuegoService } from './juego.service';
 })
 export class AppComponent {
   title = 'tic-tac-toe';
-  constructor (public juegoService: JuegoService){}
+  constructor(public juegoService: JuegoService) { }
 
-  reiniciarJuego(){
+  reiniciarJuego() {
     this.juegoService.juegoNuevo();
   }
 }
