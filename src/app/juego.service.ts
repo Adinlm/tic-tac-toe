@@ -87,6 +87,7 @@ export class JuegoService {
 
   }
 
+  //funcion para comprobar la diagonal
   comprobarDiagonal() {
     const timesRun = 2,
       cuadradoMedio = this.tablero[4].state;
