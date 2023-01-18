@@ -65,7 +65,7 @@ export class JuegoService {
   get esGanador(): boolean {
     return this.comprobarDiagonal() || this.comprobarColumnas(this.tablero, "row") || this.comprobarColumnas(this.tablero, "col") ? true : false;
   }
-
+//funcion para comprobar columnas
   comprobarColumnas(tablero: any, mode: any): boolean {
 
     const ROW = mode === "row" ? true : false;

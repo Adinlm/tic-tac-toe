@@ -15,7 +15,7 @@ export class CuadradoComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
+//permite cambiar jugador
   cambiarJugador() {
     this.juegoService.elJuegoActivo = true;
 
